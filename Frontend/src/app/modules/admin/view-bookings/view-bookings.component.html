@@ -1,0 +1,23 @@
+<div class="container-fluid mt-3">
+  <h4 class="h4">View Bookings</h4>
+
+  <table class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th>Customer name</th>
+        <th>Type</th>
+        <th>Service</th>
+        <th>Mobile No</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let b of booking">
+        <td>{{ b.customer.name }}</td>
+        <td>{{ b.service.type }}</td>
+        <td>{{ b.service.name }}</td>
+        <td>{{ b.customer.mobileno }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

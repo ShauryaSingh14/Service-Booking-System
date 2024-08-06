@@ -1,0 +1,55 @@
+<div class="container-fluid mt-lg-4">
+  <p class="h3">Enter Updated Service Details</p>
+
+  <div class="row justify-content-center my-4">
+    <div class="col-lg-4">
+      <form [formGroup]="serviceForm" (ngSubmit)="onSubmit()">
+        <label for="name" class="form-label">Service name</label>
+        <input
+          type="text"
+          class="form-control mb-3"
+          id="name"
+          name="name"
+          autocomplete="off"
+          formControlName="name"
+        />
+
+        <label for="type" class="form-label">Type</label>
+        <input
+          type="text"
+          class="form-control mb-3"
+          id="type"
+          name="type"
+          autocomplete="off"
+          formControlName="type"
+        />
+
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          class="form-control mb-3"
+          id="description"
+          name="description"
+          autocomplete="off"
+          formControlName="description"
+        ></textarea>
+
+        <label for="visiting_price" class="form-label">Visiting Charge</label>
+        <input
+          type="number"
+          class="form-control mb-3"
+          id="visiting_price"
+          name="visiting_price"
+          autocomplete="off"
+          formControlName="visiting_price"
+        />
+
+        <input
+          type="submit"
+          class="btn btn-primary w-100 mt-2"
+          value="Update"
+          [disabled]="serviceForm.invalid"
+        />
+      </form>
+    </div>
+  </div>
+</div>

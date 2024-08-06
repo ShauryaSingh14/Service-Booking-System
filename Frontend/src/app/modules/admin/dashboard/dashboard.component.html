@@ -1,0 +1,54 @@
+<div class="container-fluid pl-lg-0">
+  <div class="row">
+    <div
+      class="navbar flex-column col-lg-2 col-md-3 navbar-collapse-sm navbar-expand-md bg-primary navbar-dark mynav"
+    >
+      <h4 class="text-light h4">Booking System | Admin</h4>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <nav
+        class="navbar navbar-dark collapse navbar-collapse"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav flex-column" id="nav">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/admin/dashboard/home"
+              routerLinkActive="active"
+              >Dashboard</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              routerLink="/admin/dashboard/viewbookings"
+              routerLinkActive="active"
+              >View Bookings</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="col-lg-10 col-md-9 offset-lg-2 offset-md-3 mycontainer">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

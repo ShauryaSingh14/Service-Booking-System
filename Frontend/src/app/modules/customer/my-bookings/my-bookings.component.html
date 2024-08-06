@@ -1,0 +1,35 @@
+<div class="container-fluid mt-3">
+  <h4 class="h4">My Bookings</h4>
+
+  <table class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Visiting Price</th>
+        <th>Date(y-m-d)</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let b of booking">
+        <td>{{ b.service.name }}</td>
+        <td>{{ b.service.type }}</td>
+        <td>{{ b.service.description }}</td>
+        <td>{{ b.service.visiting_price }}</td>
+        <td>{{ b.date }}</td>
+        <td>
+          <a routerLink="/customer/dashboard/mybookings" (click)="delete(b._id)"
+            >Cancel Booking</a
+          >
+        </td>
+      </tr>
+
+      <tr *ngIf="booking.length == 0">
+        <td colspan="6" class="text-center">No Bookings</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

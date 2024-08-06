@@ -1,0 +1,41 @@
+<div class="container-fluid mt-3">
+  <img
+    src="../../../../assets/images/user.svg"
+    alt=""
+    style="height: 45px; width: 45px"
+  />
+  <span class="h3 ms-lg-3 ms-sm-3" style="font-weight: normal">{{
+    res.name
+  }}</span>
+
+  <div class="mt-4">
+    <h4 class="h4">Available Services</h4>
+
+    <table class="table table-striped mt-3">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Visiting Charge(Rs)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let s of services">
+          <td>{{ s.name }}</td>
+          <td>{{ s.type }}</td>
+          <td>{{ s.description }}</td>
+          <td>{{ s.visiting_price }}</td>
+          <td>
+            <a routerLink="/customer/dashboard/booking/{{ s._id }}">Book now</a>
+          </td>
+        </tr>
+        <tr *ngIf="services.length == 0">
+          <td colspan="7" class="text-center">No services</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

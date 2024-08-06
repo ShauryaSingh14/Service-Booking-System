@@ -1,0 +1,10 @@
+<navbar *ngIf="!router.url.includes('dashboard')"></navbar>
+
+<admin-dashboard
+  *ngIf="router.url.includes('dashboard') && router.url.includes('admin')"
+></admin-dashboard>
+
+<customer-dashboard
+  *ngIf="router.url.includes('dashboard') && router.url.includes('customer')"
+>
+</customer-dashboard>

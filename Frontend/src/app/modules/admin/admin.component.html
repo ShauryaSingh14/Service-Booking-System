@@ -1,0 +1,50 @@
+<div class="container-fluid mt-3">
+  <img
+    src="../../../../assets/images/user.svg"
+    alt=""
+    style="height: 45px; width: 45px"
+  />
+  <span class="h3 ms-lg-3 ms-sm-3" style="font-weight: normal">admin</span>
+
+  <div class="mt-4">
+    <h4 class="h4">Manage Services</h4>
+
+    <div class="d-flex justify-content-end">
+      <a class="btn btn-primary" routerLink="/admin/dashboard/addservice"
+        >Add Service</a
+      >
+    </div>
+
+    <table class="table table-striped mt-3">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Visiting Charge(Rs)</th>
+          <th colspan="2">Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let s of services">
+          <td>{{ s.name }}</td>
+          <td>{{ s.type }}</td>
+          <td>{{ s.description }}</td>
+          <td>{{ s.visiting_price }}</td>
+          <td>
+            <a routerLink="/admin/dashboard/updateservice/{{ s._id }}"
+              >Update</a
+            >
+          </td>
+          <td>
+            <a routerLink="/admin/dashboard/" (click)="delete(s._id)">Delete</a>
+          </td>
+        </tr>
+        <tr *ngIf="services.length == 0">
+          <td colspan="7" class="text-center">No services</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

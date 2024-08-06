@@ -1,0 +1,32 @@
+<div class="container-fluid mt-lg-4">
+  <p class="h3">Enter Booking Details</p>
+
+  <div class="d-flex justify-content-center">
+    <p class="fs-5 ms-lg-3 mt-2">Service: {{ res.name }}</p>
+    <p class="fs-5 ms-lg-3 mt-2">Type: {{ res.type }}</p>
+    <p class="fs-5 ms-lg-3 mt-2">Price: {{ res.visiting_price }}</p>
+  </div>
+
+  <div class="row justify-content-center my-4">
+    <div class="col-lg-4">
+      <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+        <label for="date" class="form-label">Date</label>
+        <input
+          type="date"
+          class="form-control mb-3"
+          id="date"
+          name="date"
+          autocomplete="off"
+          formControlName="date"
+        />
+
+        <input
+          type="submit"
+          class="btn btn-primary w-100 mt-2"
+          value="Book Now"
+          [disabled]="bookingForm.invalid"
+        />
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.mynav {
+  position: fixed;
+}
+
+@media (min-width: 768px) {
+  .mynav {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .mynav {
+    position: relative;
+  }
+}
